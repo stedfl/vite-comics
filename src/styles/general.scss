@@ -1,7 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif; 
 }
 
 img {
@@ -12,4 +18,12 @@ img {
   width: 90%;
   margin: 0 auto;
   max-width: 1300px;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav a {
+  text-decoration: none;
 }
