@@ -51,7 +51,34 @@ export default {
           ]
         },
 
+      ],
+      social: [
+        {
+          name: 'facebook',
+          pathImage: 'footer-facebook.png'
+        },
+        {
+          name: 'twitter',
+          pathImage: 'footer-twitter.png'
+        },
+        {
+          name: 'youtube',
+          pathImage: 'footer-youtube.png'
+        },
+        {
+          name: 'pinterest',
+          pathImage: 'footer-pinterest.png'
+        },
+        {
+          name: 'periscope',
+          pathImage: 'footer-periscope.png'
+        },
       ]
+    }
+  },
+  methods:{
+    getImagePath(imageName){
+      return new URL(`../assets/img/${imageName}`, import.meta.url).href
     }
   }
 
@@ -100,7 +127,20 @@ export default {
      
     </div>
     <div class="footer-social">
-
+      <div class="container">
+        <button>sign-up now!</button>
+        <div class="social-icons">
+          <a class="follow" href="#">follow us</a>
+          <ul>
+            <li v-for="(item, index) in social" :key="index">
+              <a href="">
+                <img :src="getImagePath(item.pathImage)" :alt="`${item.name} logo`">
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
     </div>
   </footer>
   
@@ -113,8 +153,8 @@ export default {
 @use "../styles/partials/mixin" as *;
 
 footer {
-  overflow: hidden;
   .footer-menu {
+    overflow: hidden;
     height: 370px;
     background-image: url(../assets/img/footer-bg.jpg);
     .container {
@@ -155,7 +195,38 @@ footer {
         } 
       }
     }
-
+  }
+  .footer-social {
+    background-color: #303030;
+    padding: 2.5rem 0;
+    font-weight: 700;
+    text-transform: uppercase;
+    .container {
+      @include betweenFlex;
+      button  {
+      background-color: transparent;
+      padding: 1rem;
+      border: 2px solid $primary-color;
+      color: white;
+      font-size: 1rem;
+      text-transform: uppercase;
+      }
+      .social-icons {
+        display: flex;
+        align-items: center;
+        .follow {
+          color: $primary-color;
+          font-size: 1.3rem;
+        }
+        ul {
+          display: flex;
+          margin-left: 0.5rem;
+          li {
+            margin-left: 1.2rem;
+          }
+        }
+      }
+    }
   }
 }
 
