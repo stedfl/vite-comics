@@ -2,11 +2,13 @@
 import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
 import AppFooter from './components/AppFooter.vue';
+import AppBuyBar from './components/AppBuyBar.vue';
 export default {
   name: 'App',
   components: {
     AppHeader,
     AppMain,
+    AppBuyBar,
     AppFooter
   }
 
@@ -16,6 +18,7 @@ export default {
 <template>
   <AppHeader/>
   <AppMain/>
+  <AppBuyBar/>
   <AppFooter/>
 </template>
 
