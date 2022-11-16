@@ -7,6 +7,14 @@ export default {
       headerMenu
     };
   },
+  methods: {
+    getActive(index) {
+      for (let element of this.headerMenu) {
+        element.current = false;
+      }
+      this.headerMenu[index].current = true;
+    }
+  }
 };
 </script>
 
@@ -18,7 +26,7 @@ export default {
       </div>
       <nav>
         <ul>
-          <li v-for="(item, index) in headerMenu" :key="index">
+          <li @click="getActive(index)" v-for="(item, index) in headerMenu" :key="index">
             <a :class="{'active': item.current}" :href="item.href">{{item.text}}</a>
           </li>
         </ul>
