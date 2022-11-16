@@ -91,32 +91,12 @@ export default {
       <div class="container">
         <div class="left">
           <nav>
-            <div class="col">
-              <ul>
-                <h3>{{menu[0].title}}</h3>
-                <li v-for="(item, i) in menu[0].items" :key="i">
-                  <a href="#">{{item}}</a>
-                </li>
-              </ul>
-              <ul>
-                <h3>{{menu[1].title}}</h3>
-                <li v-for="(item, i) in menu[1].items" :key="i">
-                  <a href="#">{{item}}</a>
-                </li>
-              </ul>
-            </div>
-            <ul>
-              <h3>{{menu[2].title}}</h3>
-              <li v-for="(item, i) in menu[2].items" :key="i">
+            <ul v-for="(itemMenu, index) in menu" :key="index">
+              <h3>{{itemMenu.title}}</h3>
+              <li v-for="(item, i) in itemMenu.items" :key="i">
                 <a href="#">{{item}}</a>
               </li>
             </ul>
-            <ul>
-              <h3>{{menu[3].title}}</h3>
-              <li v-for="(item, i) in menu[3].items" :key="i">
-                <a href="#">{{item}}</a>
-              </li>
-            </ul> 
           </nav>
 
         </div>
@@ -159,16 +139,18 @@ footer {
     background-image: url(../assets/img/footer-bg.jpg);
     .container {
       display: flex;
+      height: 100%;
       .left {
         width: 55%;
+        height: 100%;
         nav {
           display: flex;
-          margin-top: 40px;
-          .col ul:first-child {
-            margin-bottom: 1rem;
-          }
+          flex-direction: column;
+          flex-wrap: wrap;
+          height: 100%;
+          width: 60%;
           ul {
-            margin-right: 1.5rem;
+            margin-top: 1rem;
             h3 {
               color: white;
               text-transform: uppercase;
@@ -185,7 +167,6 @@ footer {
               }
             }
           }
-         
         }
       }
       .right {
