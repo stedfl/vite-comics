@@ -27,14 +27,14 @@ export default {
               </li>
             </ul>
           </nav>
-
         </div>
+
         <div class="right">
           <img src="/img/dc-logo-bg.png" alt="logo DC">
         </div>
       </div>
-     
     </div>
+
     <div class="footer-social">
       <div class="container">
         <button>sign-up now!</button>
@@ -49,10 +49,8 @@ export default {
           </ul>
         </div>
       </div>
-      
     </div>
   </footer>
-  
 </template>
 
 
@@ -61,52 +59,54 @@ export default {
 @use "../styles/partials/variables" as *;
 @use "../styles/partials/mixin" as *;
 
-footer {
-  .footer-menu {
-    overflow: hidden;
-    height: 370px;
-    background-image: url(../assets/img/footer-bg.jpg);
-    .container {
-      display: flex;
-      height: 100%;
-      .left {
+.footer-menu {
+  overflow: hidden;
+  height: 370px;
+  background-image: url(../assets/img/footer-bg.jpg);
+  .container {
+    display: flex;
+    height: 100%;
+    .left {
         width: 55%;
         height: 100%;
-        nav {
-          display: flex;
-          flex-direction: column;
-          flex-wrap: wrap;
-          height: 100%;
-          width: 60%;
-          ul {
-            margin-top: 1rem;
-            h3 {
-              color: white;
-              text-transform: uppercase;
-              font-size: 1.2rem;
-              margin-bottom: 0.8rem;
-            }
-            li {
-             margin: 0.1rem 0;
-              a {
-              color:$footer-color;
-              text-transform: capitalize;
-              font-size: 0.8rem;
-              font-weight: 400;
-              }
-            }
-          }
-        }
-      }
-      .right {
-        width: 45%;
-        img {
-          transform: translateY(-18%);
-        } 
+    }
+  }
+}
+
+.left nav {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 60%;
+  ul {
+    margin-top: 1rem;
+    h3 {
+      color: white;
+      text-transform: uppercase;
+      font-size: 1.2rem;
+      margin-bottom: 0.8rem;
+    }
+    li {
+      margin: 0.1rem 0;
+      a {
+      color:$footer-color;
+      text-transform: capitalize;
+      font-size: 0.8rem;
+      font-weight: 400;
       }
     }
   }
-  .footer-social {
+}
+
+.right {
+  width: 45%;
+  img {
+    transform: translateY(-18%);
+  } 
+}
+
+.footer-social {
     background-color: #303030;
     padding: 2.5rem 0;
     font-weight: 700;
@@ -120,24 +120,23 @@ footer {
       color: white;
       font-size: 1rem;
       text-transform: uppercase;
-      }
-      .social-icons {
-        display: flex;
-        align-items: center;
-        .follow {
-          color: $primary-color;
-          font-size: 1.3rem;
-        }
-        ul {
-          display: flex;
-          margin-left: 0.5rem;
-          li {
-            margin-left: 1.2rem;
-          }
-        }
+      cursor: pointer;
       }
     }
   }
-}
-
+  .social-icons {
+    display: flex;
+    align-items: center;
+    .follow {
+      color: $primary-color;
+      font-size: 1.3rem;
+    }
+    ul {
+      display: flex;
+      margin-left: 0.5rem;
+      li {
+        margin-left: 1.2rem;
+      }
+    }
+  }
 </style>

@@ -23,22 +23,14 @@ export default {
     <div class="container">
       <span>current series</span>
       <div class="cards">
-      <AppCards v-for="(comic, index) in comics" :key="index" :card="comic"/>
-      <button>load more</button>
+        <AppCards v-for="(comic, index) in comics" :key="index" :card="comic"/>
+        <button>load more</button>
+      </div>
     </div>
-
-    </div>
-    
-   
-
   </main>
-  
 </template>
 
-
-
 <style lang="scss" scoped>
-@use "../styles/partials/mixin" as *;
 @use "../styles/partials/variables" as *;
 
 main {
@@ -48,6 +40,7 @@ main {
 .container {
   position: relative;
 }
+
 .jumbotron {
   width: 100%;
   height: 400px;
@@ -58,6 +51,7 @@ main {
     object-position:top;
   }
 }
+
 span {
   font-size: 1.6rem;
   position: absolute;
@@ -73,13 +67,6 @@ button {
   font-weight: 700;
 }
 
-button {
-  padding: 1rem 4rem;
-  border: 0;
-  margin-top: 1rem;
-  cursor: pointer;
-}
-
 .cards {
   display: flex;
   justify-content: space-evenly;
@@ -87,4 +74,10 @@ button {
   padding: 4rem 0 2rem;
 }
 
+button {
+  padding: 1rem 4rem;
+  border: 0;
+  margin-top: 1rem;
+  cursor: pointer;
+}
 </style>

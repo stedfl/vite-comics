@@ -44,15 +44,13 @@ header {
   .container {
     @include betweenFlex;
   }
-
   img {
     width: 80px;
-    
   }
-  ul {
-    display: flex;
-  }
+}
 
+ul {
+  display: flex;
   a {
     display: inline-block;
     margin-left: 2rem;
@@ -67,6 +65,5 @@ header {
 
     }
   }
-  
 }
 </style>
