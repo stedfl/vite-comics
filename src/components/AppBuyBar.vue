@@ -42,7 +42,9 @@ export default {
   <nav>
     <ul>
       <li v-for="(link, index) in menu" :key="index">
-        <img :src="getImagePath(link.pathImage)" alt="{{link.pathImage}}">
+        <div class="card">
+          <img :src="getImagePath(link.pathImage)" alt="{{link.pathImage}}">
+        </div>
         <a href="">{{link.text}}</a>
       </li>
     </ul>
@@ -67,11 +69,14 @@ export default {
   li {
     padding: 3rem 2.3rem;
   }
-  img {
+  .card {
     height: 55px;
-  }
-  li:last-child img {
     width: 50px;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
   a {
     text-transform: uppercase;
