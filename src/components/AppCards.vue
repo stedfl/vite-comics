@@ -21,6 +21,9 @@ export default {
 h3 {
   color: white;
   margin-top: 1rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 0.9rem;
 }
 
 .card {

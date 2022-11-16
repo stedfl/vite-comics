@@ -20,9 +20,16 @@ export default {
     <div class="jumbotron">
       <img src="../assets/img/jumbotron.jpg" alt="jumbotron">
     </div>
-    <div class="cards container">
+    <div class="container">
+      <span>current series</span>
+      <div class="cards">
       <AppCards v-for="(comic, index) in comics" :key="index" :card="comic"/>
+      <button>load more</button>
     </div>
+
+    </div>
+    
+   
 
   </main>
   
@@ -32,8 +39,14 @@ export default {
 
 <style lang="scss" scoped>
 @use "../styles/partials/mixin" as *;
+@use "../styles/partials/variables" as *;
+
 main {
   background-color: #1c1c1c;
+}
+
+.container {
+  position: relative;
 }
 .jumbotron {
   width: 100%;
@@ -45,12 +58,33 @@ main {
     object-position:top;
   }
 }
+span {
+  font-size: 1.6rem;
+  position: absolute;
+  bottom:95%;
+  padding: 1rem 1.3rem;
+}
+
+span, 
+button {
+  color: white;
+  background-color: $primary-color;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+button {
+  padding: 1rem 4rem;
+  border: 0;
+  margin-top: 1rem;
+  cursor: pointer;
+}
 
 .cards {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex-wrap: wrap;
-  padding: 3rem 0;
+  padding: 4rem 0 2rem;
 }
 
 </style>
