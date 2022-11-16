@@ -3,6 +3,11 @@ export default {
   name: 'AppCards',
   props: {
     card: Object
+  }, 
+  data() {
+    return {
+      isPrice: false
+    }
   }
 
 }
@@ -10,8 +15,13 @@ export default {
 
 <template>
   <div class="card">
-    <img :src="card.thumb" :alt="card.series">
+    <img @mouseenter="isPrice=!isPrice" @mouseleave="isPrice=!isPrice"  :src="card.thumb" :alt="card.series">
     <h3>{{card.series}}</h3>
+    <div  class="info">
+      <h4 v-show="isPrice">{{card.price}}</h4>
+      <h5 v-show="isPrice">{{card.type}}</h5>
+    </div>
+    
   </div>
 </template>
 
@@ -37,5 +47,15 @@ h3 {
   }
 }
 
-
+.info {
+  margin-top: 0.5rem;
+  height: 30px;
+  h4 {
+    color: yellow;
+  }
+  h5 {
+    color:white;
+    text-transform: capitalize;
+  }
+}
 </style>
