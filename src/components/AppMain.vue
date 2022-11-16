@@ -6,16 +6,27 @@ export default {
 </script>
 
 <template>
-  <main>M</main>
+  <main>
+    <div class="jumbotron">
+      <img src="../assets/img/jumbotron.jpg" alt="jumbotron">
+    </div>
+    
+  </main>
   
 </template>
 
 
 
 <style lang="scss" scoped>
-main {
-  height: 130px;
-  background-color: black;
+.jumbotron {
+  width: 100%;
+  height: 400px;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position:top;
+  }
 }
 
 </style>
