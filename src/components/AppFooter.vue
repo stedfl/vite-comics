@@ -1,86 +1,15 @@
 <script>
+import {footerMenu, footerSocial} from '../data/menu.js';
+import {getImagePath} from '../data/dataMethods.js';
 export default {
   name: 'AppFooter',
   data() {
     return {
-      menu: [
-        {
-          title: 'dc comics',
-          items: [
-            'charactes',
-            'comics',
-            'movies',
-            'tv',
-            'games',
-            'videos',
-            'news'
-          ]
-        },
-        {
-          title: 'shop',
-          items: [
-            'shop DC',
-            'shop DC collectibles'
-          ]
-        },
-        {
-          title: 'dc',
-          items: [
-            'terms of use',
-            'privacy policy(new)',
-            'add choices',
-            'advertising',
-            'jobs',
-            'subscriptions',
-            'talent workshops',
-            'CPSC certificates',
-            'ratings',
-            'shop help',
-            'contact us'
-          ]
-        },
-        {
-          title: 'sites',
-          items: [
-            'DC',
-            'MAD magazine',
-            'movies',
-            'DC kids',
-            'DC universe',
-            'DC power visa',
-          ]
-        },
-
-      ],
-      social: [
-        {
-          name: 'facebook',
-          pathImage: 'footer-facebook.png'
-        },
-        {
-          name: 'twitter',
-          pathImage: 'footer-twitter.png'
-        },
-        {
-          name: 'youtube',
-          pathImage: 'footer-youtube.png'
-        },
-        {
-          name: 'pinterest',
-          pathImage: 'footer-pinterest.png'
-        },
-        {
-          name: 'periscope',
-          pathImage: 'footer-periscope.png'
-        },
-      ]
+      footerMenu,
+      footerSocial,
+      getImagePath
     }
   },
-  methods:{
-    getImagePath(imageName){
-      return new URL(`../assets/img/${imageName}`, import.meta.url).href
-    }
-  }
 
 }
 </script>
@@ -91,7 +20,7 @@ export default {
       <div class="container">
         <div class="left">
           <nav>
-            <ul v-for="(itemMenu, index) in menu" :key="index">
+            <ul v-for="(itemMenu, index) in footerMenu" :key="index">
               <h3>{{itemMenu.title}}</h3>
               <li v-for="(item, i) in itemMenu.items" :key="i">
                 <a href="#">{{item}}</a>
@@ -112,7 +41,7 @@ export default {
         <div class="social-icons">
           <a class="follow" href="#">follow us</a>
           <ul>
-            <li v-for="(item, index) in social" :key="index">
+            <li v-for="(item, index) in footerSocial" :key="index">
               <a href="">
                 <img :src="getImagePath(item.pathImage)" :alt="`${item.name} logo`">
               </a>
